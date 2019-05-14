@@ -11,7 +11,7 @@ const styles = theme => ({
     zIndex: theme.zIndex.drawer + 1,
   },
   menuButton: {
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       display: 'none',
     },
   },

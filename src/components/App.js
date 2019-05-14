@@ -1,11 +1,24 @@
 import React, {Component} from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { withStyles } from '@material-ui/core/styles';
-
 import Banner from './Banner';
 import ResumeTabs from './ResumeTabs';
 import NavDrawer from './NavDrawer'
-import NavBar from './NavBar'
+import NavBar from './NavBar';
+
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { withStyles } from '@material-ui/core/styles';
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
+
+const theme = createMuiTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 660,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+    }
+  }
+});
 
 const styles = theme => ({
   root: {
@@ -15,7 +28,11 @@ const styles = theme => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing.unit * 3,
-    paddingTop: theme.spacing.unit * 10
+    paddingTop: theme.spacing.unit * 10,
+    [theme.breakpoints.down('xs')]: {
+      padding: 'initial',
+      paddingTop: 55,
+    },
   },
 });
 
@@ -32,6 +49,7 @@ class App extends Component {
   render() {
     const { classes } = this.props;
     return(
+      <MuiThemeProvider theme={theme}>
       <div className={classes.root}>
         <CssBaseline />
         <NavBar 
@@ -47,6 +65,7 @@ class App extends Component {
           <ResumeTabs />
         </main>
       </div>
+      </MuiThemeProvider>
     );
   }
 }

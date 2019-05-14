@@ -23,7 +23,7 @@ const drawerWidth = 240;
 
 const styles = theme => ({
   drawer: {
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       width: drawerWidth,
       flexShrink: 0,
     },
@@ -49,12 +49,6 @@ const styles = theme => ({
     borderRadius: '50%', 
     border: '3px solid white',
   },
-  emailMe: {
-    '&$hover': {
-      background: 'black',
-    }
-  },
-  hover: {},
 });
 
 class NavDrawer extends Component {
@@ -110,8 +104,7 @@ class NavDrawer extends Component {
         onClose={this.handleEmailClose}
       />
       <nav className={classes.drawer}>
-          {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-          <Hidden smUp>
+          <Hidden mdUp>
             <Drawer
               container={this.props.container}
               variant="temporary"
@@ -121,7 +114,7 @@ class NavDrawer extends Component {
               {drawerContent}
             </Drawer>
           </Hidden>
-          <Hidden xsDown>
+          <Hidden smDown>
             <Drawer
               variant="permanent"
               open

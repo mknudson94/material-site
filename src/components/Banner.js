@@ -8,6 +8,11 @@ import headshot from '../images/head-shot_small.jpg';
 const styles = (theme) => ({
   container: {
     display: 'flex',
+    [theme.breakpoints.down('xs')]: {
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      padding: 20,
+    },
   },
   headshot: {
     objectFit: 'contain',
@@ -27,7 +32,7 @@ class Banner extends Component {
 
     return (
       <Paper className={classes.container}>
-        <img src={headshot} alt='head shot' className={classes.headshot}/>
+        <img src={headshot} alt='Michael Knudson headshot' className={classes.headshot}/>
         <div className={classes.text}>
           <Typography variant='h2' gutterBottom>
             Michael Knudson
