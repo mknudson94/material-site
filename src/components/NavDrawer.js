@@ -47,7 +47,7 @@ const styles = theme => ({
     margin: 'auto', 
     height: 70, 
     borderRadius: '50%', 
-    border: '3px solid white',
+    border: '3px solid #eee',
   },
 });
 

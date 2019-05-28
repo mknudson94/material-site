@@ -22,7 +22,7 @@ class NavBar extends Component {
   render() {
     const { classes } = this.props;
     return(
-      <AppBar position='fixed' className={classes.appBar} nowrap>
+      <AppBar position='fixed' className={classes.appBar} nowrap='true'>
         <Toolbar>
           <IconButton 
             color='inherit'

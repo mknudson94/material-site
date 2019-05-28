@@ -4,7 +4,11 @@ import ResumeTabs from './ResumeTabs';
 import NavDrawer from './NavDrawer'
 import NavBar from './NavBar';
 
+import resume from '../images/resume.pdf';
+
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 
@@ -34,6 +38,21 @@ const styles = theme => ({
       paddingTop: 55,
     },
   },
+
+  footer: {
+    [theme.breakpoints.up('md')]: {
+      marginLeft: 240,        
+    },
+    margin: '30px 0',
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '20px 0',
+    alignItems: 'center',
+    height: 160,
+    justifyContent: 'space-around',
+    background: 'linear-gradient(0deg, rgba(70,70,70,1) 0%, rgba(20,20,20,1) 30%, rgba(20,20,20,1) 70%, rgba(70,70,70,1) 100%)',
+    color: 'white',
+  }
 });
 
 class App extends Component {
@@ -64,6 +83,16 @@ class App extends Component {
           <Banner style={{margin: '0 20px'}}/>
           <ResumeTabs />
         </main>
+      </div>
+      <div className={classes.footer}>
+        <Typography variant="h6" style={{color:'#eee'}}>
+          Need a printable version?
+        </Typography>
+        <a href={resume} target="_blank" rel="noopener noreferrer">
+          <Button variant='outlined' style={{color:'#eee', borderColor: '#eee'}}>
+            Download resume
+          </Button>
+        </a>
       </div>
       </MuiThemeProvider>
     );
